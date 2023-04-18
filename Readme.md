@@ -42,5 +42,13 @@ SELECT * FROM table_name
 
 ### Updating a Data
 ```SQL
+UPDATE table_name SET column_name = 'data', ... WHERE ID = '12345abcde'
 ```
->
+> In this query, you will going to update a specific data in your database, you may use the other conditional type like `LIKE` aside of using `=` in SQL. In addition, you may also use the `WILDCARD` since you're using `LIKE` keyword. **Take Note**, you need to add the `WHERE` and never forget, or else all the data from the selected columns will be changed. The `...` means and more, you may update some data in a column in one query, also a single column in a query.
+
+---
+### Deteting a Data
+```SQL
+DELETE FROM table_name WHERE ID = '12345abcde'
+```
+> The most sensitive part in SQL is the delete, if you forgot the condition `WHERE` all the data from your table will be deleted and can't be retrieve unless you hava e backup. In this query, you allowed to delete a data from a table name, not deleting a data in a single column.
