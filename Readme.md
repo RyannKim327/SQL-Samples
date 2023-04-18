@@ -52,3 +52,6 @@ UPDATE table_name SET column_name = 'data', ... WHERE ID = '12345abcde'
 DELETE FROM table_name WHERE ID = '12345abcde'
 ```
 > The most sensitive part in SQL is the delete, if you forgot the condition `WHERE` all the data from your table will be deleted and can't be retrieve unless you hava e backup. In this query, you allowed to delete a data from a table name, not deleting a data in a single column.
+---
+### Note
+> This repository may not be frequently updated due to the schedules I have.
