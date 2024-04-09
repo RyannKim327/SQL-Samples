@@ -29,7 +29,8 @@ def main():
     query_button.pack(side='left')
     query_frame.pack()
 
-    data = ttk.Treeview(base)
+    data = ttk.Treeview(base, show='headings')
+    
 
     base.mainloop()
 
