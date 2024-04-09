@@ -17,14 +17,30 @@ class Database:
 		else:
 			return execute.fetchall()
 
+# if __name__ == "__main__":
+    # while True:
+        # sql = Database()
+        # query = input("Please enter a query: ")
+        # if ((query == "") or (query.lower() == 'exit') or (query.lower() == "close")):
+			# break
+		# try:
+			# print(query)
+			# q = sql.query(query)
+			# print(q)
+        # except Exception as e:
+            # print(e)
+
 if __name__ == "__main__":
-    while True:
-        sql = Database()
-        query = input("Please enter a query: ")
-        if query == "":
-            break
-        try:
-            q = sql.query(query)
-            print(q)
-        except Exception as e:
-            print(e)
+	while True:
+		sql = Database()
+		query = input("Please enter your query: ")
+		if os.system("cls"):
+			os.system("clear")
+		if(query == "") or (query.lower() == "exit") or (query.lower() == "close"):
+			break
+		try:
+			print(f"Please enter your query: {query}")
+			q = sql.query(query)
+			print(q)
+		except Exception as e:
+			print(e)
