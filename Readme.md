@@ -38,13 +38,19 @@ INSERT INTO table_name (ID, firstname, middlename, lastname) VALUES ('12345abcde
 ```SQL
 SELECT * FROM table_name
 ```
-> So basically, this section of the program has the biggest part in the SQL. So maybe one of these days, I'm going to update it again. By the way, this query shows you all the data you inserted in your query, consider all the datas in the column. * means all columns.
+> So basically, this section of the program has the biggest part in the SQL. So maybe one of these days, I'm going to update it again. By the way, this query shows you all the data you inserted in your query, consider all the datas in the column. * means all columns. You may also specify the data you want to search like:
 
+```SQL
+SELECT * FROM table_name WHERE id = 1
+```
+> The result of this query is all the data that the table_name id is equivalent to 1. You may also use non primary key like names and others.
+
+---
 ### Updating a Data
 ```SQL
 UPDATE table_name SET column_name = 'data', ... WHERE ID = '12345abcde'
 ```
-> In this query, you will going to update a specific data in your database, you may use the other conditional type like `LIKE` aside of using `=` in SQL. In addition, you may also use the `WILDCARD` since you're using `LIKE` keyword. **Take Note**, you need to add the `WHERE` and never forget, or else all the data from the selected columns will be changed. The `...` means and more, you may update some data in a column in one query, also a single column in a query.
+> In this query, you will going to update a specific data in your database, you may use the other conditional type like `LIKE` aside of using `=` in SQL. In addition, you may also use the [`WILDCARD`](#using-wildcards) since you're using `LIKE` keyword. **Take Note**, you need to add the `WHERE` and never forget, or else all the data from the selected columns will be changed. The `...` means and more, you may update some data in a column in one query, also a single column in a query.
 
 ---
 ### Deteting a Data
@@ -52,6 +58,17 @@ UPDATE table_name SET column_name = 'data', ... WHERE ID = '12345abcde'
 DELETE FROM table_name WHERE ID = '12345abcde'
 ```
 > The most sensitive part in SQL is the delete, if you forgot the condition `WHERE` all the data from your table will be deleted and can't be retrieve unless you hava e backup. In this query, you allowed to delete a data from a table name, not deleting a data in a single column.
+---
+### Using Wildcards
+> Since this was mentioned on [Updating a Data](#updating-a-data), this is what wildcard is. We commonly use underscore (_) or percent (%) in doing a wildcard. Using of underscore is to search a data without knowing a character like Jo_n which returns to all data like John. The use of percent or modulo is if you don't know a bunch of characters like hello% which results to 'hello world', 'hello lord' and so on. The percent is based on what it is position or from zero to the moon, I mean, to where it goes. Below are just examples of SQL wildcards.
+
+```SQL
+SELECT * FROM table_name WHERE name LIKE '%Doe';
+SELECT * FROM table_name WHERE name LIKE 'John%';
+SELECT * FROM table_name WHERE name LIKE 'J%e';
+SELECT * FROM table_name WHERE name LIKE 'J_hn _oe';
+```
+
 ---
 ### About SQL
 > Sometime, `INT` datatype won't work, so try to use `INTEGER` if ever you want to use `INTEGERS` as ID's datatype.
